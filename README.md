@@ -11,9 +11,9 @@ Comunidade 3.0: Sempre em Evolução
 
 A Comunidade de Estatística é um espaço para aprendizado colaborativo, troca de experiências e desenvolvimento de competências analíticas, ciência de dados e aplicação prática em diferentes setores.
 
-🌐 [comunidadedeestatistica.com.br](url)
+🌐 https://comunidadedeestatistica.com.br/
 
 ### Link do case - Apresentação em quarto.
-🌐 [https://jenniferlopes.quarto.pub/live/#/](url)
+🌐 https://jenniferlopes.quarto.pub/live/#/
 
 <img width="847" height="469" alt="capa_youtube" src="https://github.com/user-attachments/assets/da58a9f6-1ba4-482c-a6c0-3155552edd79" />
