@@ -1,0 +1,4 @@
+- source: live_presentation.qmd
+  quarto-pub:
+    - id: bdaeca2f-3cbc-4ecf-b4a4-a531c209096b
+      url: https://jenniferlopes.quarto.pub/livee

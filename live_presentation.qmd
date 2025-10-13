@@ -1,0 +1,124 @@
+---
+title: "Estratégia e Análise de Dados: Do Básico ao Futuro."
+subtitle: "Segundou com dados"
+author: "Jennifer Luz Lopes"
+lang: pt
+editor: visual
+
+format: 
+  revealjs:
+    code-block-height: 800px
+    echo: true
+    incremental: false  
+    logo: "imagens/logo.png"
+    footer: "Slides criados por [Jennifer Lopes](https://www.linkedin.com/in/jennifer-luz-lopes/), para live da Comunidade de Estatística [Thiago Marques](https://comunidadedeestatistica.com.br/)."
+    theme: ["custom.css"]
+    slide-number: true
+    show-slide-number: all
+    hash-type: number
+    progress: true
+    include-after-body: "timer.html"
+---
+
+## Comunidade 3.0 \> **`Sempre em evolução`** \<
+
+![](imagens/capa_youtube.png){fig-align="center"}
+
+## Do campo ao resultado
+
+**Objetivo:** mostrar como o R permitiu identificar linhagens superiores de arroz através de modelos mistos e seleção multivariada.
+
+> O R foi meu laboratório estatístico, ele transformou dados experimentais em decisões baseadas em evidências.
+
+## Abertura
+
+-   No início, eu seguia o método clássico: usava ANOVA e comparava as médias dos genótipos pra aplicar índices de seleção.
+-   Mas percebi que essas médias variavam demais entre os ambientes - o que parecia bom num local, caía em outro.
+-   Foi quando adotei os modelos mistos no R.
+-   Com o método REML/BLUP, consegui separar o efeito ambiental do genético e estimar o valor real de cada linhagem.
+-   Essa mudança aumentou a precisão da seleção em cerca de 30% e trouxe muito mais confiança nas decisões.”
+
+## Pergunta
+
+Quantas vezes, nas análises do dia a dia, você já confiou numa abordagem e com o tempo percebeu que os resultados não eram tão consistentes quanto pareciam?
+
+![](imagens/gif_6.gif){fig-align="center" width="438"}
+
+## O Desafio
+
+-   11 materiais genéticos- ensaio de pré-lançamento de cultivares
+-   Avaliação em ambiente irrigado
+-   Variáveis de rendimento e componentes do rendimento:\
+    comprimento de panícula, número de panículas, grãos férteis, massa de sementes, altura e floração, etc.
+-   **`Variação ambiental forte - risco de seleção errada por médias simples`**
+
+::: callout-note
+-   Como identificar o **valor genético real** das linhagens?
+:::
+
+------------------------------------------------------------------------
+
+## Modelos Mistos?
+
+Modelos mistos combinam:
+
+**Efeitos fixos:** ambiente, tratamentos\
+**Efeitos aleatórios:** genótipos, blocos, repetições
+
+y = Xb+ Zg + e
+
+onde:\
+Xb: efeitos fixos\
+Zg: efeitos genéticos aleatórios\
+e: erro residual
+
+> Essa estrutura permite separar o que é mérito genético do que é ruído ambiental.
+
+```{r}
+# modelo <- lmer(producao ~ ambiente + (1|linhagem) + (1|bloco), data = dados)
+# summary(modelo)
+```
+
+## O R em ação
+
+**Principais pacotes utilizados:**
+
+| Etapa                | Pacote    | Função                               |
+|:---------------------|:----------|:-------------------------------------|
+| Modelagem            | `lme4`    | `lmer()` para ajuste do modelo misto |
+| Parâmetros genéticos | `metan`   | herdabilidade, variâncias, acurácia  |
+| Seleção multivariada | `MGIDI`   | índice de desempenho genotípico      |
+| Manipulação          | `dplyr`   | Manipulação de dados                 |
+| Visualização         | `ggplot2` | BLUPs, correlações, rankings         |
+
+## Componentes de variância e herdabilidade
+
+![](imagens/tabela1.png){fig-align="center"}
+
+> O modelo estimou variância genética, herdabilidade, significância do modelo.\
+> Esses parâmetros mostram onde realmente há ganho genético possível.
+
+## BLUPs - Valor Genético Predito no R
+
+![](imagens/grafico1_blup.png){fig-align="center"}
+
+> As barras azuis representam linhagens acima da média e as vermelhas, abaixo.
+
+## Seleção Multivariada
+
+![](imagens/grafico3_selecao.png){fig-align="center" width="85%"}
+
+> Por fim, usei o **índice MGIDI** para integrar todos os caracteres.\
+> As linhagens com menor índice (à esquerda) foram as mais equilibradas.\
+> O gráfico radar mostra os pontos fortes e fracos de cada uma.
+
+------------------------------------------------------------------------
+
+## Resultados e impacto
+
+-   Precisão de seleção aumentada em **\~30%**
+-   Seleção de linhagens estáveis e superiores
+-   Processo 100% automatizado e reprodutível no R
+-   Aplicável a qualquer sistema com variabilidade (produção, clientes, processos)
+
+> O R me deu autonomia analítica. O resultado foi científico, técnico e estratégico.

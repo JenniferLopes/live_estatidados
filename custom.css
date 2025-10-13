@@ -1,0 +1,81 @@
+/*-- scss:defaults --*/
+// importing fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins&display=swap');
+
+// fonts
+$font-family-sans-serif: 'Open Sans', Tahoma, sans-serif !default;
+
+// headings
+$presentation-heading-font: 'Poppins',  Tahoma, sans-serif  !default;
+$presentation-heading-color: #224573 !default;
+$h1-font-size: 1.5em !default;
+$h2-font-size: 1.3em !default;
+$h3-font-size: 1.15em !default;
+
+//code
+$code-color: #224573 !default;
+$font-family-monospace: 'Inconsolata', monospace  !default;
+
+// general  
+$body-bg: #fff;
+$body-color: #000000;
+$link-color: #224573;
+$presentation-font-size-root: 30px;
+
+/*-- scss:rules --*/
+.reveal pre code {
+  background-color: #f8f8f8;
+  font-size: 1em;
+  padding: 0.5em;
+  line-height: 1.2em;
+}
+
+
+.subtitle, .author {
+  color: $presentation-heading-color;
+  font-size: $h2-font-size;
+}
+
+.reveal .panel-tabset [role=tab] {
+    font-size: 0.7em;
+}
+
+.reveal .slide-logo {
+  display: block !important;
+  position: fixed !important;
+  top: 0 !important;
+  right: 10px !important;
+  max-height: 20% !important;
+  height: 100% !important;
+  width: auto !important;
+}
+
+.reveal .slide-number {
+  bottom: 5px !important;   /* posição inferior */
+  right: 10px !important;   /* canto direito */
+  left: auto !important;    /* remove padrão da esquerda */
+  top: auto !important;     /* garante que não vá pro topo */
+  font-size: 0.7em !important; /* tamanho menor */
+  color: #224573 !important;  /* mesma cor do tema */
+  opacity: 0.8;               /* deixa um pouco mais discreto */
+}
+
+/* Espaçamento entre blocos de código no Quarto */
+.reveal pre {
+  margin-bottom: 0.8em !important;  /* adiciona espaço depois do bloco */
+}
+
+.reveal pre code {
+  display: block;
+  padding: 0.6em;                /* aumenta o "respiro" interno */
+  border-radius: 6px;            /* bordas arredondadas */
+}
+
+.reveal .cell {
+  margin-bottom: 1.5em !important; /* garante espaço entre células de código */
+}
+
+
+
+
+
