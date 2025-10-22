@@ -30,6 +30,8 @@ format:
 
 > O R foi meu laboratório estatístico, ele transformou dados experimentais em decisões baseadas em evidências.
 
+## 
+
 ## Abertura
 
 -   No início, eu seguia o método clássico: usava ANOVA e comparava as médias dos genótipos pra aplicar índices de seleção.
@@ -52,9 +54,9 @@ Quantas vezes, nas análises do dia a dia, você já confiou numa abordagem e co
     comprimento de panícula, número de panículas, grãos férteis, massa de sementes, altura e floração, etc.
 -   **`Variação ambiental forte - risco de seleção errada por médias simples`**
 
-::: callout-note
+<!-- -->
+
 -   Como identificar o **valor genético real** das linhagens?
-:::
 
 ------------------------------------------------------------------------
 
@@ -74,9 +76,7 @@ e: erro residual
 
 > Essa estrutura permite separar o que é mérito genético do que é ruído ambiental.
 
-```{r}
-# modelo <- lmer(producao ~ ambiente + (1|linhagem) + (1|bloco), data = dados)
-# summary(modelo)
+```{r} # modelo <- lmer(producao ~ ambiente + (1|linhagem) + (1|bloco), data = dados) # summary(modelo)}
 ```
 
 ## O R em ação
